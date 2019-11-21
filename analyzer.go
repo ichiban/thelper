@@ -1,4 +1,4 @@
-package unmarkedhelper
+package thelper
 
 import (
 	"go/ast"
@@ -12,7 +12,7 @@ import (
 
 // Analyzer reports unmarked test helpers.
 var Analyzer = &analysis.Analyzer{
-	Name:     "unmarkedhelper",
+	Name:     "thelper",
 	Doc:      `report unmarked test helpers`,
 	Requires: []*analysis.Analyzer{inspect.Analyzer},
 	Run:      run,
@@ -29,7 +29,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	}, func(n ast.Node, push bool) bool {
 		if !push {
 			if _, ok := n.(*ast.FuncDecl); ok && t != nil {
-				pass.Reportf(n.Pos(), "unmarked test helper: should call %s.Helper()", t.Name)
+				pass.Reportf(n.Pos(), "unmarked test helper: call %s.Helper()", t.Name)
 			}
 
 			return false

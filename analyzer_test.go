@@ -1,4 +1,4 @@
-package unmarkedhelper
+package thelper
 
 import (
 	"testing"

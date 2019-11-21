@@ -3,9 +3,9 @@ package main
 import (
 	"golang.org/x/tools/go/analysis/singlechecker"
 
-	"github.com/ichiban/unmarkedhelper"
+	"github.com/ichiban/thelper"
 )
 
 func main() {
-	singlechecker.Main(unmarkedhelper.Analyzer)
+	singlechecker.Main(thelper.Analyzer)
 }

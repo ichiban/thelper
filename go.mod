@@ -1,4 +1,4 @@
-module github.com/ichiban/unmarkedhelper
+module github.com/ichiban/thelper
 
 go 1.13
 
