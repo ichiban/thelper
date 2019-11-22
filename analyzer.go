@@ -45,7 +45,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 			}
 
 			t = containsT(n.Type.Params, pass.TypesInfo)
-			return true
+			return t != nil
 		case *ast.CallExpr:
 			if helper(n.Fun, pass.TypesInfo) {
 				t = nil
